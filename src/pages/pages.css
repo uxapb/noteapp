@@ -1,0 +1,14 @@
+.about {  
+  height: 90vh;
+  padding: 40px;
+  background-color: #e8e8e8;
+}
+
+.about-text {
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.about-text p {
+  margin-bottom: 20px;  
+}
