@@ -17,7 +17,7 @@ function App() {
           <Alert/>      
           <div className="container">
             <Switch>
-              <Route path={'/'} exact component={Home} />
+              <Route path={'/noteapp'} exact component={Home} />
               <Route path={'/about'} component={About} />
             </Switch>
           </div>
