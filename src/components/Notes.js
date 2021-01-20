@@ -21,7 +21,14 @@ export const Notes = ( {notes, onRemove} ) => {
           noteDateHours = noteDate.getHours();
         }
 
-        let noteDateStr = noteDate.getDate() + "." + noteDateMonth + "." + noteDate.getFullYear() + " в " + noteDateHours + ":" + noteDate.getMinutes() + ":" + noteDate.getSeconds();
+        let noteDateSeconds;
+        if (noteDate.getSeconds() < 10) {
+          noteDateSeconds = "0" + noteDate.getSeconds();
+        } else {
+          noteDateSeconds = noteDate.getSeconds();
+        }
+
+        let noteDateStr = noteDate.getDate() + "." + noteDateMonth + "." + noteDate.getFullYear() + " в " + noteDateHours + ":" + noteDate.getMinutes() + ":" + noteDateSeconds;
         return(
           <li 
             className="list-group-item"
