@@ -5,7 +5,7 @@ import { Notes } from '../components/Notes'
 import { FirebaseContext } from '../context/Firebase/FirebaseContext'
 
 export const Home = () => {
-  const { loading, notes, fetchNotes, removeNote } = useContext(FirebaseContext )
+  const { loading, notes, fetchNotes, removeNote } = useContext(FirebaseContext)
 
   useEffect( () => {    
     fetchNotes();

@@ -28,3 +28,7 @@
 .note-title {
   margin-right: 15px;
 }
+
+.note-date {
+  font-style: italic;
+}
