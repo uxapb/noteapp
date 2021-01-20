@@ -1,0 +1,25 @@
+.form-input {
+    width: 800px;
+    border: 2px solid grey;
+    padding: 15px;
+    font-size: 24px;
+    margin: 30px;
+}
+
+.form-button {
+    background-color: lightgreen;
+    border: 2px solid grey;
+    padding: 15px;
+    font-size: 24px;
+    margin: 30px;  
+}
+
+.form-button:hover {    
+    box-shadow: 0 3px 0px #3c354a;    
+}
+
+.form-button:active {
+    position: relative;
+    top: 3px;
+    box-shadow: 0 0px 0px #3c354a; 
+}

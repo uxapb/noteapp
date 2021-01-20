@@ -9,6 +9,10 @@ export const Alert = () => {
     return null;
   }
 
+  if (alert.visible) {
+    setTimeout(hide, 5000);
+  }
+
   return (
     <div className={ `alert alert-${alert.type || 'warning'}` }>
       <div>

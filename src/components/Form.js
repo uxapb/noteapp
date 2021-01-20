@@ -1,14 +1,7 @@
 import React, {useState, useContext} from 'react' 
 import { AlertContext } from '../context/alert/alertContext'
 import { FirebaseContext } from '../context/Firebase/FirebaseContext';
-
-const styles = {
-  width: '800px',
-  border: '2px solid grey',
-  padding: '15px',
-  fontSize: '24px',
-  margin: '30px',
-}
+import './Form.css'
 
 export const Form = () => {
   const [value, setValue] = useState('');
@@ -36,12 +29,15 @@ export const Form = () => {
       <div className="form-group"> 
         <input 
           type="text" 
-          className="form-control" 
+          className="form-input" 
           placeholder="Запишите заметку сюда"
-          style={styles}
           value={value}
           onChange={e => setValue(e.target.value)}
         />
+        <button 
+          type="submit"
+          className="form-button"
+          >Создать заметку</button>
       </div>
     </form>
   )

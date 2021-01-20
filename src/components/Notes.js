@@ -7,44 +7,31 @@ export const Notes = ( {notes, onRemove} ) => {
       {notes.map( note => {
         let noteDate = new Date(note.date.toString());
 
-        let noteDateMonth;
-        if (noteDate.getMonth() < 9) {
-          noteDateMonth = "0" + (noteDate.getMonth() + 1)
-        } else {
-          noteDateMonth = noteDate.getMonth() + 1;
-        }
+        let noteDateDay = noteDate.getDate() < 10 ? "0" + noteDate.getDate() : noteDate.getDate();     
+        let noteDateMonth = noteDate.getMonth() < 9 ? "0" + (noteDate.getMonth() + 1) : noteDate.getMonth() + 1;
+        let noteDateHours = noteDate.getHours() < 10 ? "0" + noteDate.getHours() : noteDate.getHours();
+        let noteDateMinutes = noteDate.getMinutes() < 10 ? "0" + noteDate.getMinutes() : noteDate.getMinutes();
+        let noteDateSeconds = noteDate.getSeconds() < 10 ? "0" + noteDate.getSeconds() : noteDate.getSeconds();
 
-        let noteDateHours;
-        if (noteDate.getHours() < 10) {
-          noteDateHours = "0" + noteDate.getHours();
-        } else {
-          noteDateHours = noteDate.getHours();
-        }
-
-        let noteDateSeconds;
-        if (noteDate.getSeconds() < 10) {
-          noteDateSeconds = "0" + noteDate.getSeconds();
-        } else {
-          noteDateSeconds = noteDate.getSeconds();
-        }
-
-        let noteDateStr = noteDate.getDate() + "." + noteDateMonth + "." + noteDate.getFullYear() + " в " + noteDateHours + ":" + noteDate.getMinutes() + ":" + noteDateSeconds;
+        let noteDateStr = noteDateDay + "." + noteDateMonth + "." + noteDate.getFullYear() + " в " + noteDateHours + ":" + noteDateMinutes + ":" + noteDateSeconds;
         return(
           <li 
             className="list-group-item"
             key={note.id}
           > 
-            <div>
-              <strong className="note-title"> {note.title} </strong>
-              <small className="note-date"> { noteDateStr }</small>
-            </div>             
+            <div className="note-text">
+              <strong className="note-title"> {note.title} </strong>              
+            </div>   
 
-            <button 
-              type="button" 
-              className="list-group-delete" 
-              onClick={() => onRemove(note.id)}
-              > &times; 
-            </button>
+            <div>
+              <small className="note-date"> { noteDateStr }</small>
+              <button 
+                type="button" 
+                className="list-group-delete" 
+                onClick={() => onRemove(note.id)}
+                > &times; 
+              </button>
+            </div>            
           </li>
         )
         }
