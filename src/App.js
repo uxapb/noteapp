@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {HashRouter, Switch, Route} from 'react-router-dom'
 import {Home} from './pages/Home.js'
 import {About} from './pages/About.js'
 import {Navbar} from './components/navbar'
@@ -12,16 +12,16 @@ function App() {
   return (
     <FirebaseState>
       <AlertState>
-        <BrowserRouter>          
+        <HashRouter>          
           <Navbar />    
           <Alert/>      
           <div className="container">
             <Switch>
-              <Route path={'/noteapp'} exact component={Home} />
+              <Route path={'/'} exact component={Home} />
               <Route path={'/about'} component={About} />
             </Switch>
           </div>
-        </BrowserRouter> 
+        </HashRouter> 
       </AlertState>  
     </FirebaseState>
   );
